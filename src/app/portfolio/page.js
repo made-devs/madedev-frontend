@@ -1,9 +1,10 @@
 import Navbar from '@/components/Navbar';
 import Image from 'next/image';
-import Link from 'next/link';
+
+const API_URL = 'https://madedev-backend-production.up.railway.app';
 
 async function fetchPortfolio() {
-  const res = await fetch('http://localhost:5000/api/portfolio', {
+  const res = await fetch(`http://${API_URL}/api/portfolio`, {
     cache: 'no-store',
   });
   if (!res.ok) {
