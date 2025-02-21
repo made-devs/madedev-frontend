@@ -15,7 +15,7 @@ export const fetchAllPosts = async () => {
 // Fetch Single Post by ID
 export const fetchPostById = async (id) => {
   try {
-    const res = await fetch(`${API_URL}/api/posts/${id}`);
+    const res = await fetch(`${API_URL}/posts/${id}`);
     if (!res.ok) {
       throw new Error('Post not found');
     }
