@@ -1,4 +1,4 @@
-const API_URL = 'https://madedev-backend-production.up.railway.app';
+const API_URL = 'https://madedev-backend-production.up.railway.app/api';
 
 // Fetch Semua Post
 export const fetchAllPosts = async () => {
