@@ -2,6 +2,8 @@
 
 import { createContext, useContext, useState, useEffect } from 'react';
 
+const API_URL = 'https://madedev-backend-production.up.railway.app/';
+
 // 🔹 Buat Context
 const AuthContext = createContext();
 
@@ -13,7 +15,7 @@ export function AuthProvider({ children }) {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const res = await fetch('http://localhost:5000/api/auth/me', {
+        const res = await fetch(`${API_URL}/api/auth/me`, {
           credentials: 'include', // 🔹 Kirim cookies untuk autentikasi
         });
 
@@ -37,7 +39,7 @@ export function AuthProvider({ children }) {
   // 🔹 Fungsi Login
   const login = async (username, password) => {
     try {
-      const res = await fetch('http://localhost:5000/api/auth/login', {
+      const res = await fetch(`${API_URL}/api/auth/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include', // 🔹 Simpan token di cookie
@@ -60,7 +62,7 @@ export function AuthProvider({ children }) {
   // 🔹 Fungsi Logout
   const logout = async () => {
     try {
-      const res = await fetch('http://localhost:5000/api/auth/logout', {
+      const res = await fetch(`${API_URL}/api/auth/logout`, {
         method: 'POST',
         credentials: 'include',
       });

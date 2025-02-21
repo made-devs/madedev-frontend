@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:5000/api';
+const API_URL = 'https://madedev-backend-production.up.railway.app/';
 
 // Fetch Semua Post
 export const fetchAllPosts = async () => {
@@ -15,7 +15,7 @@ export const fetchAllPosts = async () => {
 // Fetch Single Post by ID
 export const fetchPostById = async (id) => {
   try {
-    const res = await fetch(`http://localhost:5000/api/posts/${id}`);
+    const res = await fetch(`${API_URL}/api/posts/${id}`);
     if (!res.ok) {
       throw new Error('Post not found');
     }
