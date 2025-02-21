@@ -2,7 +2,7 @@
 
 import { createContext, useContext, useState, useEffect } from 'react';
 
-const API_URL = 'https://madedev-backend-production.up.railway.app/';
+const API_URL = 'https://madedev-backend-production.up.railway.app';
 
 // 🔹 Buat Context
 const AuthContext = createContext();
