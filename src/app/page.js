@@ -1,10 +1,10 @@
-import Link from 'next/link';
 import Carousel from '@/components/Carousel';
 import Navbar from '../components/Navbar';
+import Image from 'next/image';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-dark pb-8 text-white">
+    <div className="min-h-screen bg-gradient-sky pb-8 text-white">
       <Navbar />
 
       {/* Main Content */}
@@ -21,6 +21,14 @@ export default function Home() {
       </div>
 
       <Carousel />
+
+      <Image
+        src="/grassbot.webp"
+        alt="grass"
+        width={1000}
+        height={10}
+        className="absolute bottom-0"
+      />
     </div>
   );
 }

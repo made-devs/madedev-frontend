@@ -19,3 +19,7 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.bg-gradient-sky {
+  background: linear-gradient(to bottom, #aee3f2, #7ab4bf, #4a90a2);
+}

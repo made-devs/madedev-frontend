@@ -13,16 +13,20 @@ export default function LoginPage() {
     e.preventDefault();
 
     try {
-      const res = await fetch('http://localhost:5000/api/auth/login', {
-        method: 'POST',
-        credentials: 'include', // ✅ Pastikan ini ada agar token tersimpan di cookie
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ username, password }),
-      });
+      const res = await fetch(
+        'https://madedev-backend-production.up.railway.app/api/auth/login',
+        {
+          method: 'POST',
+          credentials: 'include', // ✅ Pastikan ini ada agar token tersimpan di cookie
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ username, password }),
+        }
+      );
 
       const data = await res.json();
+      console.log('Response from backend:', data);
 
       if (!res.ok) {
         throw new Error(data.error || 'Login failed');

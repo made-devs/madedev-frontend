@@ -11,8 +11,6 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-fade';
 
-const API_URL = 'http://localhost:5000/api/posts'; // Ganti dengan URL backend lo
-
 export default function Carousel() {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -46,6 +44,7 @@ export default function Carousel() {
             <SwiperSlide key={post._id} className="relative">
               <Link href={`/post/${post._id}`}>
                 <div className="relative w-full h-[45vh]">
+                  {/* Gambar */}
                   <Image
                     src={post.image}
                     alt={post.title}
@@ -54,6 +53,14 @@ export default function Carousel() {
                     className="rounded-t-lg object-cover"
                     priority
                   />
+
+                  {/* Overlay Judul */}
+                  <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/100 to-transparent px-4 pb-4 pt-8">
+                    <h3 className="text-white text-lg font-bold">
+                      {post.title}
+                    </h3>
+                  </div>
+
                   {/* Overlay Tags */}
                   <div className="absolute top-3 left-3 flex flex-wrap gap-2">
                     {post.tags.map((tag, index) => (
@@ -67,10 +74,9 @@ export default function Carousel() {
                   </div>
                 </div>
               </Link>
-              <div className="px-4 py-4 bg-primary rounded-b-lg h-[11rem]">
-                <h3 className="text-base font-bold mb-1 text-gray-800">
-                  {post.title}
-                </h3>
+
+              {/* Summary Tetap Ada di Bawah */}
+              <div className="px-4 py-4 bg-primary rounded-b-lg h-[8rem]">
                 <p className="text-gray-600 text-sm">{post.summary}</p>
               </div>
             </SwiperSlide>
