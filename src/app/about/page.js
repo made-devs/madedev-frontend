@@ -1,13 +1,22 @@
-import Image from 'next/image';
+'use client';
+
+import { motion } from 'framer-motion';
 import Navbar from '@/components/Navbar';
+import Image from 'next/image';
 
 export default function AboutPage() {
   return (
-    <section className="min-h-screen bg-dark text-white font-lexend">
-      {/* Navbar */}
+    <section className="min-h-screen bg-gradient-sky text-white font-lexend overflow-hidden">
+      {/* Navbar tetap di atas */}
       <Navbar />
 
-      <div className="max-w-3xl mx-auto py-10 px-6 text-center">
+      {/* Bungkus konten utama dengan motion.div untuk animasi opacity */}
+      <motion.div
+        className="h-screen overflow-y-auto container mx-auto py-10 px-6"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.5, ease: 'easeInOut' }}
+      >
         {/* Foto Profil */}
         <div className="relative w-40 h-40 mx-auto mb-6 rounded-full overflow-hidden border-4 border-secondary shadow-lg">
           <Image
@@ -98,7 +107,7 @@ export default function AboutPage() {
             </a>
           </li>
         </ul>
-      </div>
+      </motion.div>
     </section>
   );
 }

@@ -13,12 +13,12 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="bg-primary p-4 shadow-md font-lexend rounded-b-lg relative z-50 ">
+    <nav className=" p-4  font-lexend rounded-b-lg relative z-50 ">
       <div className="w-full flex justify-between items-center">
         {/* Link ke Home */}
         <Link
           href="/"
-          className="text-xl font-righteous text-dark font-semibold"
+          className="text-xl font-righteous text-white font-medium"
         >
           madedev
         </Link>
@@ -35,7 +35,7 @@ export default function Navbar() {
 
         {/* Hamburger Button */}
         <button
-          className="text-dark text-2xl focus:outline-none ml-4"
+          className="text-white text-2xl z-40 focus:outline-none ml-4"
           onClick={() => setMenuOpen(!menuOpen)}
         >
           {menuOpen ? '✖' : '☰'}
@@ -44,8 +44,8 @@ export default function Navbar() {
 
       {/* 🔹 Menu Navigasi (Tetap dalam Hamburger) */}
       <div
-        className={`absolute left-0 top-full w-full bg-primary rounded-b-lg text-dark text-center py-4 shadow-md transition-transform duration-700 z-40 ${
-          menuOpen ? '-translate-y-3' : '-translate-y-[150%]'
+        className={`absolute left-0 top-full w-full bg-primary rounded-b-lg text-dark text-center py-4 shadow-md transition-transform duration-700 z-20 ${
+          menuOpen ? '-translate-y-[4rem]' : '-translate-y-[150%]'
         } `}
       >
         <ul className="flex flex-col space-y-3">

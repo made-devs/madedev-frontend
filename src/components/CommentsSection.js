@@ -72,7 +72,7 @@ export default function CommentsSection({ postId }) {
           {comments.map((comment, index) => (
             <li key={index} className="border-b border-gray-700 pb-2">
               <p className="text-sm text-secondary">{comment.content}</p>
-              <span className="text-xs text-gray-500">
+              <span className="text-xs text-white">
                 — {comment.name || 'Anonymous'}
               </span>
             </li>

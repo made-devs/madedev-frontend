@@ -3,7 +3,6 @@ import { Righteous } from 'next/font/google';
 import { Lexend } from 'next/font/google';
 import { AuthProvider } from '@/context/AuthContext';
 
-// Load font dengan Next.js
 const righteous = Righteous({
   subsets: ['latin'],
   weight: '400', // Bisa disesuaikan kalau ada variasi weight
@@ -21,7 +20,7 @@ const lexend = Lexend({
 export default function RootLayout({ children }) {
   return (
     <AuthProvider>
-      <html lang="en" className={righteous.variable}>
+      <html lang="en" className={`${righteous.variable} ${lexend.variable}`}>
         <body className="font-sans">{children}</body>
       </html>
     </AuthProvider>

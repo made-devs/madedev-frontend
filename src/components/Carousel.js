@@ -2,31 +2,14 @@
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, EffectFade } from 'swiper/modules';
-import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { fetchAllPosts } from '../utils/api';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-fade';
 
-export default function Carousel() {
-  const [posts, setPosts] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const getPosts = async () => {
-      const data = await fetchAllPosts();
-      setPosts(data);
-      setLoading(false);
-    };
-    getPosts();
-  }, []);
-
-  if (loading)
-    return <p className="text-center text-primary">Loading latest posts...</p>;
-
+export default function Carousel({ posts }) {
   return (
     <div className="w-full max-w-md font-lexend mx-auto mt-4 px-4">
       <p className="text-center text-primary mb-3">Latest Post</p>
@@ -39,7 +22,7 @@ export default function Carousel() {
         fadeEffect={{ crossFade: true }}
         className="rounded-lg"
       >
-        {posts.length > 0 ? (
+        {posts && posts.length > 0 ? (
           posts.map((post) => (
             <SwiperSlide key={post._id} className="relative">
               <Link href={`/post/${post._id}`}>
@@ -76,7 +59,7 @@ export default function Carousel() {
               </Link>
 
               {/* Summary Tetap Ada di Bawah */}
-              <div className="px-4 py-4 bg-primary rounded-b-lg h-[8rem]">
+              <div className="px-4 py-4 bg-primary rounded-b-lg h-[7.5rem]">
                 <p className="text-gray-600 text-sm">{post.summary}</p>
               </div>
             </SwiperSlide>

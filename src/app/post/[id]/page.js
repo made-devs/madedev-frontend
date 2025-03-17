@@ -14,9 +14,9 @@ export default async function PostPage({ params }) {
   }
 
   return (
-    <section className="bg-dark min-h-screen">
+    <section className="bg-gradient-sky font-lexend min-h-screen">
       <Navbar />
-      <div className="max-w-3xl mx-auto bg-dark p-6 text-gray-900 rounded-b-lg shadow-lg">
+      <div className="max-w-3xl mx-auto  p-6 text-gray-900 rounded-b-lg shadow-lg">
         {/* Header */}
         <h1 className="text-3xl font-extrabold text-secondary mb-4">
           {post.title}
@@ -47,7 +47,7 @@ export default async function PostPage({ params }) {
         </div>
 
         {/* Content */}
-        <div className="prose prose-lg text-secondary leading-relaxed text-left">
+        <div className="prose prose-lg text-white font-normal leading-relaxed text-left">
           {Array.isArray(post.content)
             ? post.content.map((paragraph, index) => (
                 <p key={index} className="mb-6">
