@@ -98,13 +98,13 @@ export default function Home() {
       <AnimatePresence>
         {showContent && (
           <motion.div
-            className="container mx-auto pb-4 px-8 relative z-10"
+            className="container mx-auto min-[400px]:mt-5 pb-4 px-8 relative z-10"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 1.5 }}
           >
-            <h2 className=" py-2 text-center text-xs font-light">
+            <h2 className=" text-center text-xs font-light">
               Welcome to the <br />
               <span className="text-secondary text-4xl font-semibold">
                 &quot;Mindscape&quot;

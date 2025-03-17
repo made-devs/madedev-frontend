@@ -26,13 +26,12 @@ export default function Carousel({ posts }) {
           posts.map((post) => (
             <SwiperSlide key={post._id} className="relative">
               <Link href={`/post/${post._id}`}>
-                <div className="relative w-full h-[45vh]">
+                <div className="relative w-full h-[40vh]">
                   {/* Gambar */}
                   <Image
                     src={post.image}
                     alt={post.title}
                     fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="rounded-t-lg object-cover"
                     priority
                   />
@@ -49,7 +48,7 @@ export default function Carousel({ posts }) {
                     {post.tags.map((tag, index) => (
                       <span
                         key={index}
-                        className="bg-primary text-dark text-xs px-3 py-1 rounded-full"
+                        className="bg-primary text-dark text-[10px] px-3 py-1 rounded-full"
                       >
                         #{tag}
                       </span>
@@ -59,7 +58,7 @@ export default function Carousel({ posts }) {
               </Link>
 
               {/* Summary Tetap Ada di Bawah */}
-              <div className="px-4 py-4 bg-primary rounded-b-lg h-[7.5rem]">
+              <div className="px-4 py-4 bg-primary rounded-b-lg h-[8rem]">
                 <p className="text-gray-600 text-sm">{post.summary}</p>
               </div>
             </SwiperSlide>
