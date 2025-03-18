@@ -12,7 +12,7 @@ import 'swiper/css/effect-fade';
 export default function Carousel({ posts }) {
   return (
     <div className="w-full max-w-md font-lexend mx-auto mt-4 px-4">
-      <p className="text-center text-primary mb-3">Latest Post</p>
+      <p className="text-center text-primary sm:text-xl mb-3">Latest Post</p>
       <Swiper
         modules={[Pagination, EffectFade]}
         effect="fade"
@@ -48,7 +48,7 @@ export default function Carousel({ posts }) {
                     {post.tags.map((tag, index) => (
                       <span
                         key={index}
-                        className="bg-primary text-dark text-[10px] px-3 py-1 rounded-full"
+                        className="bg-primary text-dark text-[10px] sm:text-sm px-3 py-1 rounded-full"
                       >
                         #{tag}
                       </span>

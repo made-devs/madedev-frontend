@@ -44,8 +44,8 @@ export default function Home() {
 
       {/* Animasi Cloud dengan Framer Motion */}
       <motion.div
-        className="absolute inset-0"
-        initial={{ y: 100, x: 10, opacity: 1 }}
+        className="absolute inset-0 flex justify-center"
+        initial={{ y: 100, x: 30, opacity: 1 }}
         animate={{ x: 500, opacity: 0 }}
         transition={{
           type: 'tween',
@@ -53,18 +53,20 @@ export default function Home() {
           delay: 1.5,
         }}
       >
-        <Image
-          src="/cloud1.webp"
-          alt="Cloud"
-          height={10}
-          width={400}
-          priority
-        />
+        <div className="relative w-[400px] h-[150px]">
+          <Image
+            src="/cloud2.webp"
+            alt="Cloud"
+            layout="fill"
+            className="object-contain"
+            priority
+          />
+        </div>
       </motion.div>
 
       <motion.div
-        className="absolute inset-0"
-        initial={{ y: 200, x: 10, opacity: 1 }}
+        className="absolute inset-0 flex justify-center"
+        initial={{ y: 150, x: -30, opacity: 1 }}
         animate={{ x: -500, opacity: 0 }}
         transition={{
           type: 'tween',
@@ -72,23 +74,25 @@ export default function Home() {
           delay: 1.5,
         }}
       >
-        <Image
-          src="/cloud2.webp"
-          alt="Cloud"
-          height={10}
-          width={400}
-          priority
-        />
+        <div className="relative w-[400px] h-[150px]">
+          <Image
+            src="/cloud2.webp"
+            alt="Cloud"
+            layout="fill"
+            className="transform scale-x-[-1] object-contain"
+            priority
+          />
+        </div>
       </motion.div>
 
-      {/* Grass Background yang selalu berada di tengah dengan efek zoom saat hover */}
-      <div className="absolute bottom-0 left-0 w-full flex justify-center ">
+      {/* Grass Background yang selalu berada di tengah */}
+      <div className="absolute bottom-0 md:bottom-[-50px] left-0 w-full flex justify-center">
         <div className="relative w-full h-[100px] md:h-[150px] lg:h-[200px] overflow-hidden">
           <Image
             src="/grassbotfull.webp"
             alt="Grass Background"
             fill
-            className="object-cover object-center "
+            className="object-cover object-center"
             priority
           />
         </div>
@@ -98,19 +102,19 @@ export default function Home() {
       <AnimatePresence>
         {showContent && (
           <motion.div
-            className="container mx-auto min-[400px]:mt-5 pb-4 px-8 relative z-10"
+            className="container mx-auto max-w-3xl pb-4 px-8 relative z-10 min-[400px]:mt-5"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 1.5 }}
           >
-            <h2 className=" text-center text-xs font-light">
+            <h2 className="text-center text-xs sm:text-base font-light">
               Welcome to the <br />
-              <span className="text-secondary text-4xl font-semibold">
+              <span className="text-secondary text-4xl sm:text-5xl font-semibold">
                 &quot;Mindscape&quot;
               </span>
             </h2>
-            <p className="text-white mt-1 px-3 text-center text-[12px] font-light leading-relaxed">
+            <p className="text-white mt-1 sm:mt-3 px-3 text-center text-xs sm:text-[14px] font-light leading-relaxed">
               A space where ideas, creativity, and perspectives converge.
               Sometimes it’s about web development, but most of the time, it’s
               just a journey of thinking, questioning, and evolving. Enjoy!

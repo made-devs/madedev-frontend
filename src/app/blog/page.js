@@ -12,7 +12,7 @@ export default async function BlogPage() {
       <Navbar />
 
       <AnimatedContent>
-        <div className="max-w-5xl mx-auto px-6 py-10">
+        <div className="max-w-5xl mx-auto px-6 pb-10 pt-5">
           <h1 className="text-3xl font-bold text-white mb-6 text-center">
             All Blog Posts
           </h1>
