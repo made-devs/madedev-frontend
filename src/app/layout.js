@@ -1,4 +1,5 @@
 import './globals.css'; // Pastikan Tailwind tetap di-import
+import { Analytics } from '@vercel/analytics/react';
 import { Righteous } from 'next/font/google';
 import { Lexend } from 'next/font/google';
 import { AuthProvider } from '@/context/AuthContext';
@@ -21,7 +22,10 @@ export default function RootLayout({ children }) {
   return (
     <AuthProvider>
       <html lang="en" className={`${righteous.variable} ${lexend.variable}`}>
-        <body className="font-sans">{children}</body>
+        <body className="font-sans">
+          {children}
+          <Analytics />
+        </body>
       </html>
     </AuthProvider>
   );
