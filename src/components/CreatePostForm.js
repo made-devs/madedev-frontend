@@ -34,13 +34,16 @@ export default function CreatePostForm() {
     console.log('📤 Sending Data:', newPost); // ✅ Debug data yang dikirim ke backend
 
     try {
-      const res = await fetch('http://localhost:5000/api/posts', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(newPost),
-      });
+      const res = await fetch(
+        'https://madedev-backend-production.up.railway.app/api/posts',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(newPost),
+        }
+      );
 
       const responseData = await res.json();
       console.log('📥 Response from Server:', responseData); // ✅ Debug response dari backend
