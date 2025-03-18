@@ -30,17 +30,18 @@ export default function AboutPage() {
 
         {/* Headline */}
         <h1 className="text-3xl font-bold text-secondary mb-4">
-          Madedev: More Than Just a Blog
+          Mindscape - More Than Just a Blog
         </h1>
 
         {/* About the Blog */}
         <p className="text-lg font-light leading-relaxed text-justify mb-6">
-          Madedev was born out of a developer’s constant curiosity and passion
-          for learning. Whether it’s breaking down complex tech concepts,
-          exploring the latest industry trends, or sharing personal insights,
-          this blog serves as both a knowledge archive and a creative outlet.
-          It’s a space where I document my journey in web development and
-          beyond.
+          This blog is a mix of my life journey, random musings, favorite
+          games,anime, and anything else that excites me. It’s also a place
+          where I keep my portfolio, documenting what I’ve built and learned
+          along the way. No specific rules, no fixed topics—just a collection of
+          things that matter to me. If you enjoy stories, insights, or simply
+          geeking out over the same interests, then you’re in the right place.
+          Feel free to explore, and welcome to my mindscape.
         </p>
 
         {/* About the Author */}
