@@ -83,7 +83,7 @@ export default function AboutPage() {
           <li>
             💻{' '}
             <a
-              href="https://github.com/madedev"
+              href="https://github.com/made-devs"
               className="text-primary hover:underline"
             >
               GitHub
@@ -101,7 +101,7 @@ export default function AboutPage() {
           <li>
             📩{' '}
             <a
-              href="mailto:madedev@example.com"
+              href="mailto:nmaderama@gmail.com"
               className="text-primary hover:underline"
             >
               Email
